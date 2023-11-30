@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container" id="con-header">
+  <div class="row align-items-center">
+    <div class="col">
+      <span class="username-text">User: </span>
+      <span class="username-user">{{userDisplayName}}</span>
+    </div>
+    <div class="col" id="middle">
+      <img src="/assets/images/logo.png" alt="logo" />
+      <h1 class="title">Iry Bank</h1>
+    </div>
+    <div class="col gobacks">
+      <button type="button" class="go-back-btn" routerLink="/dashboard">Go back</button>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="mainboard">
+
+  <div class="row" id="mainboard-header">
+    <div class="row" id="search-transactions">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        <input class="form-control" type="text" name="search" id="search" [(ngModel)]="searchText" autocomplete="off"
+          placeholder="Search your transactions here...">
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+    <div class="row">
+      <div class="col" id="add-tran">
+        <button class="add-tran-btn" type="submit" routerLink="/new-transaction" id="haha"> New transacton </button>
+      </div>
+      <div class="col" id="add-money">
+        <button class="add-money-btn" type="submit" routerLink="/add-money/{{accounts.id}}">Add Money</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="accounts-all">
+    <div class="col">
+      <div *ngIf="accounts">
+        <div class="account" *ngFor="let transaction of accounts.transactions | searchFilter: searchText;">
+          <div class="card">
+            <div class="row" id="cardrow">
+              <div class="col-sm-8">
+                <p class="from-iban">From:</p>
+                <p class="iban-text">{{transaction.fromiban}}</p>
+                <p class="from-iban">To:</p>
+                <p class="iban-text">{{transaction.toiban}}</p>
+
+                <i class="fa fa-info-circle" id="info-btn" style="font-size:24px"
+                  (click)="showInfo(transaction.selected=true) "></i>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="amount">
+                  <div class="money">
+                    <p class="money-text" *ngIf="transaction.state === 'deposit'">
+                      {{transaction.amount | currency:"HRK ":true}}</p>
+                    <p class="money-text" *ngIf="transaction.state === 'withdrawl' || !transaction.state">
+                      -{{transaction.amount | currency:"HRK ":true}}</p>
+                  </div>
+                  <div class="arrow"
+                    [ngClass]="{'green': transaction.state === 'deposit', 'red': transaction.state === 'withdrawl'}">
+                    <img class="green-arrow-img" src="/assets/images/green-arrow.png" alt="green arrow" width="20"
+                      height="20" *ngIf="transaction.state === 'deposit'">
+                    <img class="red-arrow-img" src="/assets/images/red-arrow.png" alt="red arrow" width="20" height="20"
+                      *ngIf="transaction.state === 'withdrawl' || !transaction.state">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="trans-name"> <span id="trans-name" [outerHTML]="name | italicName"> </span> {{transaction.name}}</p>
+
+            <div class="row">
+              <div class="more-info" *ngIf="transaction.selected===true">
+                <div class="more-info-content">
+                  <div class="info-header">
+                    <div class="col-sm-10">
+                      <p class="more-info-title"> More info about this transaction: </p>
+                    </div>
+                    <div class="col-sm-2 show-less-img">
+                      <img src="/assets/images/show-less.png" alt="show less info" class="show-less"
+                        (click)="gobackInfo(transaction.selected=false)" width="24" height="24">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                    <p class="more-info-text"> Bank bank bank </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                    <p class="more-info-text"> Description: {{transaction.description}}</p>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

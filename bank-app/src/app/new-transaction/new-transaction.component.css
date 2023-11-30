@@ -1,0 +1,330 @@
+#con-header {
+  margin-bottom: 2.5%;
+}
+
+#credit-calc, #credit-rate {
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+#credit-calc {
+  padding-left: 5%;
+  margin-right: 5%;
+}
+
+.title {
+  font-family: Book Antiqua;
+  color: white;
+  opacity: .9;
+  font-weight: 50;
+  letter-spacing: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  line-height: 0.9;
+  font-size: 50px;
+  margin-top: 5%;
+}
+
+#middle {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+img {
+  object-fit: contain;
+}
+
+.title2 {
+  text-align: center;
+  margin-bottom: 5%;
+  margin-left: 3%;
+}
+
+.title-text {
+  font-family: 'Segoe UI';
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 28px;
+}
+
+/*.subtitle-acc {
+  float: left;
+  margin-bottom: 2%;
+  margin-left: 3%;
+}*/
+
+.subtitle-text {
+  font-family: 'Segoe UI';
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 22px;
+  float: left;
+  margin-bottom: 2%;
+}
+
+#mainboard {
+  border: 2px solid #000000;
+  text-align: center;
+  margin: auto;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  max-height: 600px;
+  box-sizing: content-box;
+  margin-top: 2%;
+  max-width: 60%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+#mainboard::-webkit-scrollbar {
+  display: none;
+}
+
+#mainboard{
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.card {
+  padding: 8px 22px;
+  box-sizing: border-box;
+  opacity: 0.9;
+  border: 1px solid rgba(0,0,0,0.4);
+  border-radius: 12px;
+  letter-spacing: 1px;
+  background-color: rgba(255,255,255,0.8);
+  width: auto;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 50%;
+  max-width: 50%;
+}
+
+/*djeluje na odabranu opciju*/
+.select select {
+  font-weight: 100;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  font-family: "Segoe UI";
+}
+
+/*djeluje na opcije unutar dropdown-a*/
+.select select option  {
+  font-weight: 100;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  font-family: "Segoe UI";
+}
+
+.money-text {
+  font-weight: 100;
+  color: black;
+  letter-spacing: 1.5px;
+  font-size: 28px;
+  font-family: "Segoe UI";
+  text-align: center;
+}
+
+
+/************form**************/
+#transfer-elements {
+  margin-left: 3%;
+}
+
+.col-sm-2 {
+  text-align: left;
+  padding-left: 0px;
+}
+.col-sm-10 {
+  text-align: left;
+  padding-left: 19px;
+}
+
+.iban-label, .amount-label, .name-label, .des-label {
+  font-weight: 100;
+  color: black;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+}
+
+.iban, .amount, .name, .des {
+  font-family: "Segoe UI";
+}
+
+.iban-label, .amount-label, .name-label, .des-label {
+  font-weight: 400;
+  opacity: 0.9;
+  color: white;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  text-shadow: 0 0 5px rgb(62, 61, 61);
+  margin-bottom: 2%;
+}
+
+input[type=text] {
+  padding: 12px 12px;
+  margin: 5px 0;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 70%;
+  opacity: 0.9;
+  border: 1px solid rgba(0,0,0,0.4);
+}
+
+::placeholder {
+  font-size: 17px;
+  font-family: 'Candara';
+  font-style: italic;
+  opacity: 0.3;
+  font-weight:bold;
+}
+
+input {
+  border-radius: 12px;
+  border: 1px solid gray;
+  letter-spacing: 1px;
+}
+
+.money {
+  font-weight: 100;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  font-family: "Segoe UI";
+}
+
+.iban-warning {
+  font-size: 13px;
+  color: rgb(193, 35, 35);
+  margin-top: -5px;
+  font-family:'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+
+.cancel-btn, .confirm-btn {
+  border-radius: 25px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  opacity: 0.9;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-family: "Segoe UI";
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  padding: 10px 35px;
+  height: 40px;
+  margin-top: 15%;
+  align-items: center;
+}
+
+#cancel .cancel-btn:hover {
+  cursor: pointer;
+  background-color: rgba(186, 176, 176, 0.3);
+}
+
+#confirm .confirm-btn:hover {
+  cursor: pointer;
+  background-color: rgba(186, 176, 176, 0.3);
+}
+
+select {
+  -webkit-appearance: none;
+}
+
+select:hover{
+  cursor: pointer;
+  background-color: rgba(231, 223, 223, 0.3);
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+
+  .select select {
+    font-size: 15px;
+  }
+
+  .select select option  {
+    font-size: 15px;
+  }
+
+  input[type=text] {
+    width: 70%;
+  }
+  .col-sm-10 {
+    text-align: center;
+  }
+
+  .cancel-btn, .confirm-btn {
+    padding: 5px 20px;
+  }
+
+  #cancel, #confirm{
+    margin-top: 10%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #mainboard {
+    max-width: 75%;
+    margin-bottom: 12px;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  img {
+    width: 60px;
+    height: 50px;
+  }
+
+  .title {
+    font-size: 35px;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  }
+
+  #mainboard {
+    max-width: 75%;
+    margin-bottom: 12px;
+  }
+
+  .title-text {
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+
+  .subtitle-text {
+    font-size: 16px;
+  }
+
+  .card {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .iban-label, .amount-label, .name-label, .des-label {
+    font-size: 15px;
+  }
+
+  input[type='text'] {
+    width: 100%;
+  }
+
+  .cancel-btn, .confirm-btn {
+    padding: 5px 13px;
+  }
+
+  #cancel, #confirm{
+    margin-top: 10%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .col-sm-2 {
+    text-align: center;
+  }
+}
+

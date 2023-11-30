@@ -1,0 +1,76 @@
+<div class="container" id="con-header">
+  <div class="row align-items-center row-header">
+    <div class="col">
+      <span class="username-text">User: </span>
+      <span class="username-user">{{userDisplayName}}</span>
+    </div>
+    <div class="col" id="middle">
+      <img src="/assets/images/logo.png" alt="logo" />
+      <h1 class="title">Iry Bank</h1>
+    </div>
+    <div class="col logouts" >
+      <button type="submit" class="logout-btn" (click)="logoutModal()"> Log Out </button>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="mainboard">
+
+  <div class="container">
+    <div class="row" id="mainboard-header">
+      <div class="col">
+        <button type="submit" class="calculator-btn" routerLink="/calculator"> Calculate credit </button>
+      </div>
+      <div class="col">
+        <button class="add-btn" type="submit" routerLink="/new-account"> Add new account </button>
+      </div>
+    </div>
+
+
+      <div class="row" id="accounts-all">
+        <div class="account" *ngFor="let account of accounts">
+          <div class="card" routerLink="/transactions/{{account.id}}">
+            <p class="iban-text">IBAN: {{account.myiban}}</p>
+            <p class="money-text">{{account.myamount | currency:"HRK ":true}}</p>
+          </div>
+          <div class="delete-card">
+            <button (click)="deleteModal(account.id)" type="submit" class="delete-btn" routerLink="/dashboard"><img
+                class="delete-icon" src="/assets/images/delete-btn.png" alt="delete button" width="40"
+                height="30"></button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="modal" *ngIf="isShowLog" (click)="goback()">
+          <div class="modal-content" (click)="preventPropagation($event)">
+            <p class="modal-text"> Are you sure you want to logout? </p>
+            <div class="btns">
+              <button type="submit" routerLink="/login" class="yes-btn"> Yes, logout</button>
+              <button type="submit" (click)="goback()" class="no-btn"> No, go back</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="modal" *ngIf="isShowDel" (click)="goback()">
+          <div class="modal-content" (click)="preventPropagation($event)">
+            <p class="modal-text"> Are you sure you want to delete this account? </p>
+            <div class="btns">
+              <button type="submit" (click)="deleteAccount()" class="yes-btn">Yes, delete</button>
+              <button type="submit" (click)="goback()" class="no-btn"> No, go back</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

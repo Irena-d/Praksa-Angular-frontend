@@ -1,0 +1,46 @@
+<div class="container" id="con-header">
+  <div class="row align-items-center">
+    <div class="col" id="middle">
+      <img src="/assets/images/logo.png" alt="logo" />
+      <h1 class="title">Iry Bank</h1>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="mainboard">
+
+  <div class="container">
+    <div class="row" id="mainboard-header">
+      <span class="title-text">Creating new account</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <form [formGroup]="newAccForm" (ngSubmit)="onSubmit()" class="newaccform">
+          <div class="add-elements">
+            <label for="iban" class="iban"><b class="iban-label">Add new IBAN:</b></label>
+            <input formControlName="iban" type="text" placeholder="Enter IBAN here" minlength="16" name="iban" #acciban>
+            <p *ngIf="newAccForm.controls['iban'].hasError('required') && (newAccForm.controls['iban'].dirty || newAccForm.controls['iban'].touched)"
+              class="iban-warning"> Please insert an IBAN! </p>
+            <p *ngIf="newAccForm.controls['iban'].hasError('pattern') && (newAccForm.controls['iban'].dirty || newAccForm.controls['iban'].touched)"
+              class="iban-warning"> Please, insert valid IBAN! </p>
+          </div>
+
+          <div class="row">
+          <div class="col" id="cancel">
+            <button type="button" class="cancel-btn" routerLink="/dashboard">Cancel</button>
+          </div>
+          <div class="col" id="confirm">
+            <button type="submit" class="confirm-btn"
+              (click)="addAccount(acciban.value); acciban.value=''">Confirm</button>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

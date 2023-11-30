@@ -1,0 +1,53 @@
+<div class="container" id="con-header">
+  <div class="row align-items-center">
+    <div class="col"></div>
+    <div class="col" id="middle">
+      <img src="/assets/images/logo.png" alt="logo" />
+      <h1 class="title">Iry Bank</h1>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+
+<div class="container" id="mainboard">
+
+
+  <div class="container">
+    <div class="row" id="mainboard-header">
+      <span class="title-text">Add money to your account</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+
+      <form [formGroup]="addMoneyForm" (ngSubmit)="onSubmit()">
+        <div class="add-elements">
+          <label for="money" class="money"><b class="money-label">Insert amount:</b></label>
+          <input [(ngModel)]="money" formControlName="money" type="text" placeholder="Enter amount here" name="money" id="amount" value="100">
+         <span id="a"> </span>
+          <p *ngIf="addMoneyForm.controls['money'].hasError('required') && (addMoneyForm.controls['money'].dirty || addMoneyForm.controls['money'].touched)"
+            class="iban-warning"> Please insert an amount! </p>
+          <p *ngIf="addMoneyForm.controls['money'].hasError('pattern') && (addMoneyForm.controls['money'].dirty || addMoneyForm.controls['money'].touched)"
+            class="iban-warning"> Value must be numeric! </p>
+        </div>
+        <div class="add-elements">
+          <label for="des" class="des"><b class="des-label">Insert description:</b></label>
+          <input formControlName="des" type="text" placeholder="Enter description here" name="des">
+          <p *ngIf="addMoneyForm.controls['des'].hasError('required') && (addMoneyForm.controls['des'].dirty || addMoneyForm.controls['des'].touched)"
+            class="iban-warning"> Please insert a description! </p>
+        </div>
+
+        <div class="row">
+          <div class="col" id="cancel">
+            <button type="button" class="cancel-btn" routerLink="/dashboard">Cancel</button>
+          </div>
+          <div class="col" id="confirm">
+            <button type="submit" id="confirmBtn" class="confirm-btn" (click)="addMoney(this.addMoneyForm.controls['money'].value, this.addMoneyForm.controls['des'].value);">
+              Confirm </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

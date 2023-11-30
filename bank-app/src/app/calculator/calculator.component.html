@@ -1,0 +1,127 @@
+<div class="container" id="con-header">
+  <div class="row align-items-center">
+    <div class="col">
+      <span class="username-text">User: </span>
+      <span class="username-user">{{userDisplayName}}</span>
+    </div>
+    <div class="col" id="middle">
+      <img src="/assets/images/logo.png" alt="logo" />
+      <h1 class="title">Iry Bank</h1>
+    </div>
+    <div class="col gobacks">
+      <button type="submit" class="go-back-btn" routerLink="/dashboard"> Go back </button>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="mainboard">
+
+      <div class="row" id="mainboard-header">
+        <span class="title-text">Calculate a credit for you! Choose credit amount, repayment period and currency.</span>
+      </div>
+
+    <div class="row allrows">
+
+      <div class="col" id="credit-form">
+        <div class="row">
+          <h2 class="div-title">Credit form</h2>
+        </div>
+        <div class="row" id="ranges">
+          <div class="choose-amount">
+            <p class="choose-text"> Credit amount </p>
+            <div class="choose-wrap">
+              <p class="choose-value">{{rangeValue | currency:"HRK ":true}}</p>
+              <input type="range" class="choose-range" min="1000" max="100000" step="1000" value="40000" id="valueId"
+                name="choose-value" (input)="valueChanged($event)">
+              <div class="minmax">
+                <span class="min">{{minValue | currency:"HRK ":true}}</span>
+                <span class="max">{{maxValue | currency:"HRK ":true}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="choose-amount">
+            <p class="choose-text"> Repayment period </p>
+            <div class="choose-wrap">
+              <p class="choose-age">{{rangeAge}} years</p>
+              <input type="range" class="choose-range" min="3" max="30" step="1" value="10" id="ageId" name="choose-age"
+                (input)="ageChanged($event)">
+              <div class="minmax">
+                <span class="min">3 years</span>
+                <span class="max">30 years</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col" id="credit-calc">
+        <div class="row">
+          <h2 class="div-title">Credit calculation</h2>
+        </div>
+        <div class="row">
+          <p class="monthly-amount-text">Monthly amount:</p>
+        </div>
+        <div class="row">
+          <p class="monthly-amount-value"> {{mjesecna | currency:"HRK":true}} </p>
+        </div>
+        <div class="row" id="single-info">
+          <div class="col" id="calc-info-text"><span class="calc-info-text">Total amount: </span></div>
+          <div class="col" id="calc-info-value"><span class="calc-info-value">{{ukupniIznos | currency: "HRK":true}}</span></div>
+        </div>
+        <div class="row" id="single-info">
+          <div class="col" id="calc-info-text"><span class="calc-info-text">Total interest rate: </span></div>
+          <div class="col" id="calc-info-value"><span class="calc-info-value">{{kamatniIznos | currency: "HRK":true}}</span></div>
+        </div>
+        <div class="row" id="single-info">
+          <div class="col" id="calc-info-text"><span class="calc-info-text">Interest rate: </span></div>
+          <div class="col" id="calc-info-value"><span class="calc-info-value">{{rate | number : '1.2-2' }} %</span></div>
+        </div>
+        <div class="row" id="single-info">
+          <div class="col" id="calc-info-text"><span class="calc-info-text">Interest rate type: </span></div>
+          <div class="col" id="calc-info-value"><span class="calc-info-value">{{tip}}</span></div>
+        </div>
+      </div>
+
+      <div class="col" id="credit-rate">
+        <div class="row"> <h2 class="div-title">Credit rate information</h2></div>
+
+        <div class="row" id="single-radio">
+          <div class="col">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="rate1" name="rate" value=2 checked (change)="calculate($event)">
+              <label class="form-check-label" for="rate1">Residential credit</label>
+              <div class="credit-info">If you choose resitential credit, interested rate will be 2% with fixed rate type.</div>
+            </div>
+          </div>
+         </div>
+
+
+        <div class="row" id="single-radio">
+          <div class="col">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="rate" value=2.5 id="rate2" (change)="calculate($event)">
+              <label class="form-check-label" for="rate2">Residential credit with repayment insurance</label>
+              <div class="credit-info">If you choose resitential credit with repayment insurance, interested rate will be 2.5% with fixed rate type.</div>
+           </div>
+          </div>
+        </div>
+
+        <div class="row" id="single-radio">
+          <div class="col">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="rate" value=3 id="rate3" (change)="calculate($event)">
+              <label class="form-check-label" for="rate3">Residential eco credit  </label>
+              <div class="credit-info">If you choose resitential eco credit, interested rate will be 3% with cominated rate type.</div>
+           </div>
+          </div>
+        </div>
+
+      </div>
+      </div>
+
+    </div>
+
+
+

@@ -1,0 +1,90 @@
+<div class="mainboard-header">
+  <div class="container" >
+    <div class="row">
+      <span class="title-text">Calculate a credit for you! Choose credit amount, repayment period and currency.</span>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="con-header">
+  <div class="row align-items-center">
+    <div class="col">
+      <h2 class="div-title">Credit form</h2>
+      <div class="choose-amount">
+        <p class="choose-text"> Credit amount </p>
+        <div class="choose-wrap">
+          <p class="choose-value">{{rangeValue | currency:"HRK ":true}}</p>
+          <input type="range" class="choose-range" min="1000" max="100000" step="1000" value="40000" id="valueId"
+            name="choose-value" (input)="valueChanged($event)">
+          <div class="minmax">
+            <span class="min">{{minValue | currency:"HRK ":true}}</span>
+            <span class="max">{{maxValue | currency:"HRK ":true}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="choose-amount">
+        <p class="choose-text"> Repayment period </p>
+        <div class="choose-wrap">
+          <p class="choose-age">{{rangeAge}} years</p>
+          <input type="range" class="choose-range" min="3" max="30" step="1" value="10" id="ageId" name="choose-age"
+            (input)="ageChanged($event)">
+          <div class="minmax">
+            <span class="min">3 years</span>
+            <span class="max">30 years</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col" id="middle">
+      <h2 class="div-title">Credit calculation</h2>
+    <p class="monthly-amount-text">Monthly amount:</p>
+    <p class="monthly-amount-value"> {{mjesecna | currency:"HRK":true}} </p>
+    <div class="calc-info">
+      <ul class="calc-info-ul">
+        <li>
+          <span class="calc-info-text">Total amount: </span>
+          <span class="calc-info-value">{{ukupniIznos | currency: "HRK":true}}</span>
+        </li>
+        <li>
+          <span class="calc-info-text">Total interest rate: </span>
+          <span class="calc-info-value">{{kamatniIznos | currency: "HRK":true}}</span>
+        </li>
+        <li>
+          <span class="calc-info-text">Interest rate: </span>
+          <span class="calc-info-value">{{rate | number : '1.2-2' }} %</span>
+        </li>
+        <li>
+          <span class="calc-info-text">Interest rate type: </span>
+          <span class="calc-info-value">{{tip}}</span>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div class="col">
+      <h2 class="div-title">Credit rate information</h2>
+      <div class="choose-rate">
+        <div class="radio">
+          <div class="radio-one">
+            <input type="radio" name="rate" value=2 checked (change)="calculate($event)">
+            <label for="one">Credit ONE
+              <div class="credit-info">Lorem Ipsum is simply dummy text. </div>
+            </label>
+          </div>
+          <div class="radio-one">
+            <input type="radio" name="rate" value=2.5 id="one" (change)="calculate($event)">
+            <label for="one">Credit TWO
+              <div class="credit-info">Lorem Ipsum is simply dummy text. </div>
+            </label>
+          </div>
+          <div class="radio-one">
+            <input type="radio" name="rate" value=3 id="one" (change)="calculate($event)">
+            <label for="one">Credit THREE
+              <div class="credit-info">Lorem Ipsum is simply dummy text. </div>
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

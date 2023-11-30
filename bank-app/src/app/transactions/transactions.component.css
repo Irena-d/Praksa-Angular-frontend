@@ -1,0 +1,431 @@
+#con-header {
+  margin-top: 1.5%;
+  margin-bottom: 2.5%;
+}
+
+#credit-calc, #credit-rate {
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+#credit-calc {
+  padding-left: 5%;
+  margin-right: 5%;
+}
+
+.username-text,
+.username-user {
+  font-family: "Segoe UI";
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 22px;
+}
+
+.username-user {
+  font-style: italic;
+}
+
+.title {
+  font-family: Book Antiqua;
+  color: white;
+  opacity: .9;
+  font-weight: 50;
+  letter-spacing: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  line-height: 0.9;
+  font-size: 50px;
+  margin-top: 5%;
+  margin-left: 5px;
+}
+
+.gobacks {
+  text-align: right;
+}
+
+#middle {
+  display: flex;
+}
+
+img {
+  object-fit: contain;
+}
+
+.go-back-btn {
+  border-radius: 25px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  opacity: 0.9;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-family: "Segoe UI";
+  font-size: 18px;
+  letter-spacing: 1.5px;
+ /* margin-left: 70%;*/
+  padding: 8px 20px;
+}
+
+.go-back-btn:hover {
+  cursor: pointer;
+  background-color: rgba(125, 121, 121, 0.3);
+}
+
+/*************mainboard***************/
+#mainboard {
+  border: 2px solid #000000;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: content-box;
+  max-height: 600px;
+  text-align: center;
+  margin: auto;
+  padding: 30px;
+  max-width: 80%;
+}
+
+#mainboard-header {
+  padding: 15px;
+ justify-content: center;
+}
+
+.add-tran-btn {
+  border-radius: 25px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  opacity: 0.9;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-family: "Segoe UI";
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  padding: 8px 20px;
+}
+
+.add-money-btn {
+  border-radius: 25px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  opacity: 0.9;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-family: "Segoe UI";
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  padding: 8px 30px;
+}
+
+.add-money-btn:hover {
+  cursor: pointer;
+  background-color: rgba(186, 176, 176, 0.3);
+}
+
+.add-tran-btn:hover {
+  cursor: pointer;
+  background-color: rgba(186, 176, 176, 0.3);
+}
+
+/**************search*************/
+input[type="text"] {
+  border-radius: 25px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.3);
+  opacity: 0.9;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-family: "Segoe UI";
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  height: 40px;
+  margin-bottom: 7px;
+}
+
+input[type="text"]:hover {
+  cursor: text;
+  background-color: rgba(186, 176, 176, 0.3);
+}
+
+::placeholder {
+  font-size: 16px;
+  font-family: "Segoe UI";
+  font-style: italic;
+  color: white;
+}
+
+input {
+  background: url("/assets/images/search.png") left no-repeat;
+  background-position: 7px 7px;
+  padding-left: 45px;
+}
+
+.form-control {
+  width: 50%;
+  display: initial;
+  margin-bottom: 5%;
+}
+
+#accounts-all {
+  overflow: hidden;
+  max-height: 450px;
+  overflow-y: scroll;
+}
+
+#accounts-all::-webkit-scrollbar {
+  display: none;
+}
+
+#accounts-all {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.account {
+  display: flex;
+  /*gap: 50px;*/
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  margin: 10px 0;
+  box-sizing: border-box;
+  width: 70%;
+  opacity: 0.9;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  letter-spacing: 1px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
+
+.iban-text {
+  font-weight: 100;
+  color: black;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  font-family: "Segoe UI";
+  margin-left: 8%;
+  margin-top: -1%;
+  max-width: fit-content;
+}
+
+.from-iban,
+.to-iban {
+  font-weight: 100;
+  color: black;
+  font-size: 15px;
+  font-family: "Segoe UI";
+  text-align: left;
+  margin-left: 3%;
+  max-width: fit-content;
+  margin-top: 2.5%;
+}
+
+#cardrow {
+  align-items: center;
+}
+
+.money, .arrow {
+  display: inline-block;
+  padding-left: 3px;
+}
+
+.money-text {
+  font-weight: 100;
+  color: black;
+  letter-spacing: 1.5px;
+  font-size: 30px;
+  font-family: "Segoe UI";
+  text-align: center;
+}
+
+.trans-name {
+  font-weight: 100;
+  color: black;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  font-family: "Segoe UI";
+  text-align: center;
+}
+
+#trans-name {
+  font-size: 17px;
+}
+
+#info-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px;
+  color:#888;
+  margin-right: 5px;
+}
+
+#accounts-all .account .card .fa-info-circle:hover{
+  cursor: pointer;
+}
+
+.more-info-title {
+  font-weight: 100;
+  color: black;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  font-family: "Segoe UI";
+  text-align: left;
+  margin-left: 2%;
+}
+
+.more-info-content {
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.more-info-text {
+  margin-left: 2%;
+  text-align: left;
+}
+
+.info-header {
+  display: flex;
+  align-items: baseline;
+}
+
+.show-less {
+  margin: 7px;
+}
+
+.show-less-img {
+  text-align: right;
+}
+
+.show-less:hover {
+  cursor: pointer;
+}
+
+.container-mainboard .mainboard .mainboard-header .add-btn:hover {
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  .add-tran-btn {
+    font-size: 12px;
+  }
+  .add-money-btn {
+    font-size: 12px;
+  }
+
+  ::placeholder {
+    font-size: 12px;
+  }
+
+  .money-text {
+    font-size: 18px;
+  }
+
+  .iban-text {
+    font-size: 16px;
+  }
+
+  .add-tran-btn {
+    margin-top: 3%;
+  }
+
+  .add-money-btn {
+    margin-top: 3%;
+  }
+
+  #mainboard {
+    margin-bottom: 12px;
+  }
+
+  .form-control {
+    width: 70%;
+  }
+
+}
+
+
+@media only screen and (max-width: 480px) {
+  ::placeholder {
+    font-size: 12px;
+  }
+
+  .money-text {
+    font-size: 25px;
+  }
+
+  .arrow img {
+    width: 23px;
+    height: 23px;
+  }
+
+  .iban-text {
+    font-size: 14px;
+    margin-top: 0;
+    margin-left: 10px;
+  }
+
+  .from-iban, .to-iban {
+    margin-top: 1.5%;
+    margin-bottom: 0;
+  }
+
+  .add-tran-btn {
+    margin-top: 3%;
+  }
+
+  .add-money-btn {
+    margin-top: 3%;
+  }
+
+  .go-back-btn {
+    font-size: 12px;
+    padding: 5px 15px;
+  }
+
+  .username-text,
+  .username-user {
+    font-size: 12px;
+  }
+
+  img {
+    width: 60px;
+    height: 50px;
+  }
+
+  .title {
+    font-size: 25px;
+    font-family: 'Book Antiqua', serif;
+  }
+
+  #mainboard {
+    padding: 0;
+    max-width: 100%;
+
+  }
+
+  .add-money-btn, .add-tran-btn {
+    padding: 5px 16px;
+  }
+
+
+  #mainboard-header{
+    flex-direction: row;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .show-less{
+    width: 20px;
+    height: 20px;
+  }
+
+  .info-header {
+    justify-content: space-between;
+    align-content: flex-start;
+  }
+}

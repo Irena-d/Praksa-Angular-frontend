@@ -1,0 +1,116 @@
+<div class="container" id="con-header">
+  <div class="row align-items-center">
+    <div class="col" id="middle">
+      <img src="/assets/images/logo.png" alt="logo" />
+      <h1 class="title">Iry Bank</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="mainboard">
+
+  <div class="container">
+    <div class="row" id="mainboard-header">
+      <span class="title-text">Creating new trasaction</span>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="subtitle">
+        <span class="subtitle-text">Use the account:</span>
+      </div>
+
+      <div class="col">
+        <form [formGroup]="newTransForm" (ngSubmit)="onSubmit()">
+          <div class="select">
+            <select formControlName="selected" class="card" name="accounts" id="accounts" placeholder="haha">
+              <option [ngValue]=null selected disabled>Choose account...</option>
+              <option *ngFor="let account of accounts" [ngValue]="account">
+                <div class="account">
+                  <p class="iban-text">IBAN: {{account.myiban}}</p>
+                </div>
+              </option>
+            </select>
+            <p *ngIf="newTransForm.controls['selected'].hasError('required') && (newTransForm.controls['selected'].dirty || newTransForm.controls['selected'].touched)"
+              class="iban-warning"> Please choose an account! </p>
+            <p *ngIf="newTransForm.controls['selected'].value?.myamount===0 && (newTransForm.controls['selected'].dirty || newTransForm.controls['selected'].touched)"
+              class="iban-warning"> Cannot make transfer with 0$ account! </p>
+            <p *ngIf="newTransForm.controls['selected'].value?.myamount<newTransForm.controls['amount'].value && (newTransForm.controls['selected'].dirty || newTransForm.controls['selected'].touched)"
+              class="iban-warning"> You do not have enough money on this account! Choose another!</p>
+          </div>
+          <div *ngFor="let a of accounts">
+            <div class="money" *ngIf="a===this.newTransForm.controls['selected'].value">
+              {{ a.myamount | currency:"HRK ":"symbol"}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="subtitle">
+              <span class="subtitle-text">Transfer to:</span>
+            </div>
+          </div>
+
+          <div class="container" id="transfer-elements">
+            <div class="row align-items-center justify-content-end" id="enter-iban">
+              <div class="col-sm-2">
+                <label for="iban" class="iban"><b class="iban-label">IBAN:</b></label>
+              </div>
+              <div class="col-sm-10">
+                <input formControlName="iban" type="text" placeholder="Enter IBAN here" name="iban" #toiban>
+              </div>
+              <p *ngIf="newTransForm.controls['iban'].hasError('required') && (newTransForm.controls['iban'].dirty || newTransForm.controls['iban'].touched)"
+                class="iban-warning"> Please insert an IBAN! </p>
+              <p *ngIf="newTransForm.controls['iban'].hasError('pattern') && (newTransForm.controls['iban'].dirty || newTransForm.controls['iban'].touched)"
+                class="iban-warning"> Must contain 16 numeric values! </p>
+            </div>
+            <div class="row align-items-center" id="enter-amount">
+              <div class="col-sm-2">
+                <label for="amount" class="amount"><b class="amount-label">Amount:</b></label>
+              </div>
+              <div class="col-sm-10">
+                <input formControlName="amount" id="amount-id" type="text" placeholder="Enter amount here" name="amount" #amount>
+              </div>
+              <p *ngIf="newTransForm.controls['amount'].hasError('required') && (newTransForm.controls['amount'].dirty || newTransForm.controls['amount'].touched)"
+                class="iban-warning"> Please insert an amount! </p>
+              <p *ngIf="newTransForm.controls['amount'].hasError('pattern') && (newTransForm.controls['amount'].dirty || newTransForm.controls['amount'].touched)"
+                class="iban-warning"> Must contain only numeric values! </p>
+            </div>
+            <div class="row align-items-center" id="enter-name">
+              <div class="col-sm-2">
+                <label for="name" class="name"><b class="name-label">Name:</b></label>
+              </div>
+              <div class="col-sm-10">
+                <input formControlName="name" type="text" placeholder="Enter name here" name="name" #name>
+              </div>
+              <p *ngIf="newTransForm.controls['name'].hasError('required') && (newTransForm.controls['name'].dirty || newTransForm.controls['name'].touched)"
+                class="iban-warning"> Please insert a name! </p>
+            </div>
+            <div class="row align-items-center" id="enter-des">
+              <div class="col-sm-2">
+                <label for="des" class="des"><b class="des-label">Description:</b></label>
+              </div>
+              <div class="col-sm-10">
+                <input formControlName="des" type="text" placeholder="Enter description here" name="des" #des>
+              </div>
+              <p *ngIf="newTransForm.controls['des'].hasError('required') && (newTransForm.controls['des'].dirty || newTransForm.controls['des'].touched)"
+                class="iban-warning"> Please insert a description! </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col" id="cancel">
+              <button type="button" class="cancel-btn" routerLink="/dashboard">Cancel</button>
+            </div>
+            <div class="col" id="confirm">
+              <button type="submit" class="confirm-btn"
+                (click)="doTransfer(this.newTransForm.controls['selected'].value, this.newTransForm.controls['iban'].value, this.newTransForm.controls['amount'].value, this.newTransForm.controls['name'].value, this.newTransForm.controls['des'].value);">Confirm</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

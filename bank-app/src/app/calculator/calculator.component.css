@@ -1,0 +1,412 @@
+#con-header {
+  margin-top: 1.5%;
+  margin-bottom: 2.5%;
+}
+
+
+
+#credit-calc {
+  padding: 0 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-right: 5%;
+
+}
+
+.username-text,
+.username-user {
+  font-family: "Segoe UI";
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 22px;
+}
+
+.username-user {
+  font-style: italic;
+}
+
+.go-back-btn {
+  border-radius: 25px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  opacity: 0.9;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-family: "Segoe UI";
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  padding: 8px 20px;
+  /*margin-left: 70%;*/
+}
+
+.go-back-btn:hover {
+  cursor: pointer;
+  background-color: rgba(125, 121, 121, 0.3);
+}
+
+img {
+  object-fit: contain;
+}
+
+.title {
+  font-family: Book Antiqua;
+  color: white;
+  opacity: .9;
+  font-weight: 50;
+  letter-spacing: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  line-height: 0.9;
+  font-size: 50px;
+  margin-top: 5%;
+  margin-left: 5px;
+}
+
+#middle {
+  display: flex;
+}
+
+.gobacks {
+  text-align: right;
+}
+
+/**********mainboard************/
+
+#mainboard {
+  border: 2px solid #000000;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 12px;
+  text-align: center;
+  box-sizing: content-box;
+  max-width: 80%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+#mainboard::-webkit-scrollbar {
+  display: none;
+}
+
+#mainboard{
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+#mainboard-header {
+  padding-bottom: 3%;
+}
+
+.title-text {
+  font-family: 'Segoe UI';
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 28px;
+}
+
+.div-title {
+  color: white;
+  letter-spacing: 1px;
+  font-size: 24px;
+  font-family: 'Segoe UI';
+  margin-top: 7%;
+  margin-bottom: 7%;
+}
+
+.choose-text {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Segoe UI';
+  text-align: left;
+  margin-left: 25%;
+}
+
+.choose-value, .choose-age {
+  font-family: 'Segoe UI';
+  text-align: left;
+  font-size: 18px;
+  color: rgba(43, 41, 103, 0.8);
+}
+
+.choose-wrap {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choose-value, .choose-age {
+  width: 50%;
+  text-align: left;
+}
+
+.choose-range {
+  width: 65%;
+  text-align: center;
+  -webkit-appearance: none;
+  height: 12px;
+  border-radius: 5px;
+  background: #fff5f5;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.choose-range:hover {
+  opacity: 1;
+}
+
+.choose-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff5f5;
+  cursor: pointer;
+  box-shadow: 0 0 0 8px #2e1372;
+}
+
+.choose-range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #250f5f;
+  cursor: pointer;
+}
+
+.min, .max {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.minmax {
+  display: flex;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.min {
+  width: 50%;
+  text-align:start;
+  margin-left: 18%;
+}
+
+.max {
+  width: 50%;
+  text-align: end;
+  margin-right: 18%;
+}
+
+#ranges {
+  margin-bottom: 10%
+}
+
+.radio {
+  margin-right: 33%;
+}
+
+.calc-info {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.monthly-amount-text {
+  font-family: 'Segoe UI';
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 1px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 1px;
+  font-family: 'Segoe UI';
+}
+
+.monthly-amount-value  {
+  font-size: 35px;
+  text-align: center;
+  font-family: 'Segoe UI';
+  color: rgba(43, 41, 103, 0.8);
+  font-weight: 500;
+  margin-bottom: 3.5%
+}
+
+.calc-info-text {
+  width: 70%;
+  font-size: 20px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#calc-info-text {
+  text-align: left;
+}
+
+.calc-info-value {
+  width: 30%;
+  font-size: 25px;
+  color: rgba(43, 41, 103, 0.8);
+  text-align: right;
+}
+
+#calc-info-value {
+  text-align: right;
+}
+
+#single-info {
+  margin-bottom: 3%;
+}
+
+/*Credit rate informamtion*/
+
+label {
+  color: rgba(43, 41, 103, 0.8);;
+  letter-spacing: 1px;
+  font-size: 24px;
+  font-family: 'Segoe UI';
+  margin-top: -5%;
+  text-align: start;
+}
+
+.credit-info {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: 'Segoe UI';
+}
+
+.form-check {
+  margin-bottom: 10%;
+}
+
+#rate1, #rate2, #rate3 {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 0 5px white;
+}
+
+.form-check-input:checked {
+  background-color: rgba(43, 41, 103, 0.8);
+  border-color: rgba(43, 41, 103, 0.8);
+}
+
+#single-radio {
+  margin-top: 5%;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .allrows {
+    flex-direction: column;
+  }
+
+  .div-title {
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+
+  #credit-calc {
+    margin-top: 5%;
+  }
+
+  .form-check {
+    margin-bottom: 5%;
+    margin-left: 10%
+  }
+
+  .form-check-label {
+    width: 100%;
+  }
+
+  .credit-info {
+    text-align: start;
+  }
+
+  #mainboard {
+    max-width: 75%;
+    margin-bottom: 12px;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+  .go-back-btn {
+    font-size: 12px;
+    padding: 5px 15px;
+  }
+
+  .username-text,
+  .username-user {
+    font-size: 12px;
+  }
+
+  img {
+    width: 60px;
+    height: 50px;
+  }
+
+  .title {
+    font-size: 25px;
+    font-family: 'Book Antiqua', serif;
+  }
+
+  .div-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .title-text {
+    font-size: 15px;
+  }
+
+  .monthly-amount-text {
+    font-size: 18px;
+  }
+
+  .monthly-amount-value {
+    font-size: 25px;
+  }
+
+  .calc-info-text {
+    font-size: 15px;
+  }
+
+  .calc-info-value {
+    font-size: 18px;
+  }
+
+  .allrows {
+    flex-direction: column;
+  }
+
+  .form-check-label {
+    font-size: 18px;
+  }
+
+  .credit-info {
+    font-size: 16px;
+  }
+
+  #rate1, #rate2, #rate3 {
+    margin-top: 3%;
+  }
+
+  .choose-range {
+    width: 80%;
+  }
+
+  .min {
+    margin-left: 10%;
+  }
+
+  .max {
+    margin-right: 10%;
+  }
+}

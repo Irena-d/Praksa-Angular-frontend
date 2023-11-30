@@ -1,0 +1,47 @@
+<div class="container" id="con-header">
+  <div class="row align-items-center">
+    <div class="col"></div>
+    <div class="col" id="middle">
+      <img src="/assets/images/logo.png" alt="logo" />
+      <h1 class="title">Iry Bank</h1>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+
+<div class="container" id="login">
+  <div class="row">
+    <p class="please">Please, login with your e-mail and password</p>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" (ngSubmit)="login()" class="login-form">
+        <div class="login-elements">
+          <!-- email -->
+          <label for="email" class="email"><b class="email-label">e-mail:</b></label>
+          <input formControlName="email" type="text" placeholder="Enter e-mail here" name="email" id="email">
+          <p *ngIf="loginForm.controls['email'].hasError('required') && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)"
+            class="login-warning"> Please insert an email! </p>
+          <p *ngIf="loginForm.controls['email'].hasError('pattern') && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)"
+            class="login-warning"> Email not valid! </p>
+          <!--  password -->
+          <label for="password" class="password"><b class="password-label">password:</b></label>
+          <input formControlName="password" type="password" placeholder="Enter password here" name="password" id="password">
+          <p *ngIf="loginForm.controls['password'].hasError('required') && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)"
+            class="login-warning"> Please insert a password! </p>
+          <p *ngIf="loginForm.controls['password'].hasError('pattern') && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)"
+            class="login-warning"> Password must have at least 6 charaters, <br> 1 uppercase, 1 lowercase and 1 number!
+          </p>
+        </div>
+
+        <p class="login-warning-mess">{{message}}</p>
+
+        <div class="row">
+          <div class="col">
+          <button type="submit" class="btn btn-primary" id="login-btn">Log In</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
